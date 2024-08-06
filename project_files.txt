@@ -1,0 +1,428 @@
+### src/App.css ###
+
+
+
+### src/App.js ###
+import React, { useState } from 'react';
+import BasicInformation from './components/BasicInformation';
+import Work from './components/Work';
+import Skills from './components/Skills';
+import Resources from './components/Resources';
+import DeveloperSetup from './components/DeveloperSetup';
+import './index.css';
+
+function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    document.documentElement.classList.toggle('dark');
+  };
+
+  return (
+    <div className={`App ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-black'}`}>
+      <button
+        className="p-2 bg-gray-300 dark:bg-gray-700 rounded-md"
+        onClick={toggleDarkMode}
+      >
+        Toggle Dark Mode
+      </button>
+      <BasicInformation />
+      <Work />
+      <Skills />
+      <Resources />
+      <DeveloperSetup />
+    </div>
+  );
+}
+
+export default App;
+
+
+
+### src/App.test.js ###
+import { render, screen } from '@testing-library/react';
+import App from './App';
+
+test('renders learn react link', () => {
+  render(<App />);
+  const linkElement = screen.getByText(/learn react/i);
+  expect(linkElement).toBeInTheDocument();
+});
+
+
+
+### src/components/BasicInformation.js ###
+import React from 'react';
+
+const BasicInformation = () => (
+  <section className="p-6 bg-gray-100 dark:bg-gray-800 rounded-md shadow-md text-center">
+    <h1 className="text-2xl font-bold mb-4">Basic Information</h1>
+    <img src="/profile.jpg" alt="Profile" className="profile" />
+    <p>Name: Rafael Melo</p>
+    <p>Currently a Full Stack Web Development student at Red River College Polytechnic. Passionate about web and mobile application development, with 5 years of experience. Seeking opportunities to contribute within a team environment using Agile methodologies.</p>
+  </section>
+);
+
+export default BasicInformation;
+
+
+
+### src/components/DeveloperSetup.js ###
+import React from 'react';
+
+const DeveloperSetup = () => (
+  <section className="p-6 bg-gray-100 dark:bg-gray-800 rounded-md shadow-md">
+    <h1 className="text-2xl font-bold mb-4">Developer Setup</h1>
+    <p>VSCode set up with essential extensions for JavaScript and React development.</p>
+    <p>Terminal setup: PowerShell with npm, Node.js, Docker, and Linux tools.</p>
+    <p>Preferred editor font: VSCode.</p>
+  </section>
+);
+
+export default DeveloperSetup;
+
+
+
+### src/components/Resources.js ###
+import React from 'react';
+
+const Resources = () => (
+  <section className="p-6 bg-gray-100 dark:bg-gray-800 rounded-md shadow-md">
+    <h1 className="text-2xl font-bold mb-4">Resources</h1>
+    <div className="mb-6">
+      <h2 className="text-xl font-semibold">GitHub Profile</h2>
+      <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" className="w-12 h-12" />
+      <p>Summary: Check out my GitHub profile for my projects and code samples.</p>
+      <a href="https://github.com/rafxmelo" className="text-blue-500 dark:text-blue-300">View GitHub Profile</a>
+    </div>
+    <div>
+      <h2 className="text-xl font-semibold">LinkedIn Profile</h2>
+      <img src="https://content.linkedin.com/content/dam/me/brand/en-us/brand-home/logos/01-dsk-e8-v2.png.original.png" alt="LinkedIn" className="w-12 h-12" />
+      <p>Summary: Connect with me on LinkedIn to view my professional network and experiences.</p>
+      <a href="https://www.linkedin.com/in/rafaelmelok/" className="text-blue-500 dark:text-blue-300">View LinkedIn Profile</a>
+    </div>
+  </section>
+);
+
+export default Resources;
+
+
+
+### src/components/Skills.js ###
+import React from 'react';
+
+const Skills = () => (
+  <section className="p-6 bg-gray-100 dark:bg-gray-800 rounded-md shadow-md">
+    <h1 className="text-2xl font-bold mb-4">Skills</h1>
+    <p>Backend: Spring Boot, Python, PHP, SQL, Java, Ruby</p>
+    <p>Frontend: HTML, CSS, JavaScript, React, Angular</p>
+    <p>Other: Git, Docker, Linux Environments, Agile Methodologies</p>
+  </section>
+);
+
+export default Skills;
+
+
+
+### src/components/Work.js ###
+import React from 'react';
+
+const Work = () => (
+  <section className="p-6 bg-gray-100 dark:bg-gray-800 rounded-md shadow-md">
+    <h1 className="text-2xl font-bold mb-4">Work</h1>
+    <div className="mb-6">
+      <h2 className="text-xl font-semibold">AWB Corporate Website</h2>
+      <p>Developed and maintained the corporate website using Angular and a dockerized Spring Boot backend.</p>
+      <p>Tech List: Angular, Spring Boot, Docker</p>
+    </div>
+    <div>
+      <h2 className="text-xl font-semibold">React Native Mobile App</h2>
+      <p>Created a mobile application with React Native for cross-platform deployment.</p>
+      <p>Tech List: React Native, JavaScript</p>
+    </div>
+  </section>
+);
+
+export default Work;
+
+
+
+### src/index.css ###
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.App {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  padding: 0 50px;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+img.profile {
+  display: block;
+  max-width: 150px;
+  border-radius: 50%;
+  margin: 20px auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+section {
+  margin-bottom: 40px; /* Space between sections */
+  padding: 20px;
+}
+
+button {
+  margin-bottom: 20px;
+}
+
+
+
+### src/index.js ###
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+
+
+### src/reportWebVitals.js ###
+const reportWebVitals = onPerfEntry => {
+  if (onPerfEntry && onPerfEntry instanceof Function) {
+    import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
+      getCLS(onPerfEntry);
+      getFID(onPerfEntry);
+      getFCP(onPerfEntry);
+      getLCP(onPerfEntry);
+      getTTFB(onPerfEntry);
+    });
+  }
+};
+
+export default reportWebVitals;
+
+
+
+### src/setupTests.js ###
+// jest-dom adds custom jest matchers for asserting on DOM nodes.
+// allows you to do things like:
+// expect(element).toHaveTextContent(/react/i)
+// learn more: https://github.com/testing-library/jest-dom
+import '@testing-library/jest-dom';
+
+
+
+### package.json ###
+{
+  "name": "rafael-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.40",
+    "tailwindcss": "^3.4.7"
+  }
+}
+
+
+### Dockerfile ###
+# Dockerfile
+FROM node:14-alpine AS build
+WORKDIR /app
+COPY package.json ./
+RUN npm install
+COPY . ./
+RUN npm run build
+
+FROM nginx:alpine
+COPY --from=build /app/build /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+
+
+### README.md ###
+# Rafael Melo's Portfolio Website
+
+## Overview
+
+This is a portfolio website built with React to showcase the coursework and projects completed during my Full Stack Web Development program at Red River College. The site includes sections for basic information, work, skills, resources, and developer setup.
+
+## Project Structure
+
+- **Basic Information**: General details about me.
+- **Work**: Highlights of my projects.
+- **Skills**: Technical skills I have acquired.
+- **Resources**: Useful resources and links.
+- **Developer Setup**: Information about my development environment.
+
+## Docker Setup
+
+### Dockerfile Requirements
+
+1. Create a Docker container that hosts a production build of the Create React App for the portfolio site.
+2. Name the container `melo_rafael_coding_assignment14`.
+3. Host the site files in a working directory called `melo_rafael_final_site`.
+
+### Dockerfile
+
+```dockerfile
+# Dockerfile
+FROM node:14-alpine AS build
+WORKDIR /app
+COPY package.json ./
+RUN npm install
+COPY . ./
+RUN npm run build
+
+FROM nginx:alpine
+COPY --from=build /app/build /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+```
+
+### Running the Docker Container
+
+1. Build the Docker image:
+
+   ```bash
+   docker build -t melo_rafael_coding_assignment14 .
+   ```
+
+2. Run the Docker container:
+
+   ```bash
+   docker run -d -p 5575:80 --name melo_rafael_coding_assignment14 melo_rafael_coding_assignment14
+   ```
+
+3. Open your browser and visit `http://localhost:5575`.
+
+## Contact
+
+- **LinkedIn**: [rmelo](https://www.linkedin.com/in/rafaelmelok/)
+- **GitHub**: [rmelo](https://github.com/rafxmelo)
+
+
+
+### postcss.config.js ###
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+
+
+
+### tailwind.config.js ###
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  darkMode: 'class',
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+
+
