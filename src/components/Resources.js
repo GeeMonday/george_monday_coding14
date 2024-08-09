@@ -14,7 +14,7 @@ const Resources = () => (
         Summary: Check out my GitHub profile for my projects and code samples.
       </p>
       <a
-        href="https://github.com/rafxmelo"
+        href="https://github.com/GeeMonday"
         className="text-blue-500 dark:text-blue-300"
       >
         View GitHub Profile
@@ -32,7 +32,7 @@ const Resources = () => (
         experiences.
       </p>
       <a
-        href="https://www.linkedin.com/in/rafaelmelok/"
+        href="https://www.linkedin.com/in/george-monday-b9143428b/"
         className="text-blue-500 dark:text-blue-300"
       >
         View LinkedIn Profile

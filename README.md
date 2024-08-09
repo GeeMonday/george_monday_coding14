@@ -1,4 +1,4 @@
-# Rafael Melo's Portfolio Website
+# George Monday Portfolio Website
 
 ## Overview
 
@@ -17,8 +17,8 @@ This is a portfolio website built with React to showcase the coursework and proj
 ### Dockerfile Requirements
 
 1. Create a Docker container that hosts a production build of the Create React App for the portfolio site.
-2. Name the container `melo_rafael_coding_assignment14`.
-3. Host the site files in a working directory called `melo_rafael_final_site`.
+2. Name the container `george_monday_assignment14`.
+3. Host the site files in a working directory called `george_monday_final_site`.
 
 ### Dockerfile
 
@@ -42,18 +42,18 @@ CMD ["nginx", "-g", "daemon off;"]
 1. Build the Docker image:
 
    ```bash
-   docker build -t melo_rafael_coding_assignment14 .
+   docker build -t george_monday_coding14 .
    ```
 
 2. Run the Docker container:
 
    ```bash
-   docker run -d -p 5575:80 --name melo_rafael_coding_assignment14 melo_rafael_coding_assignment14
+    docker run -p 5575:80 george_monday_coding14
    ```
 
 3. Open your browser and visit `http://localhost:5575`.
 
 ## Contact
 
-- **LinkedIn**: [rmelo](https://www.linkedin.com/in/rafaelmelok/)
-- **GitHub**: [rmelo](https://github.com/rafxmelo)
+- **LinkedIn**: https://www.linkedin.com/in/george-monday-b9143428b/
+- **GitHub**:https://github.com/GeeMonday

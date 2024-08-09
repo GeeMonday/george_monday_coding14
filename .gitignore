@@ -18,6 +18,28 @@
 .env.test.local
 .env.production.local
 
+# log files
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# IDEs and editors
+/.idea
+/.vscode
+
+# OS specific files
+Thumbs.db
+ehthumbs.db
+
+# Yarn Integrity file
+.yarn-integrity
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Miscellaneous
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
